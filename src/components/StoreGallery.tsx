@@ -1,4 +1,4 @@
-import { BranchImage } from "./BranchImage";
+import { BranchImage } from "@/components/BranchImage";
 
 const categories = [
   {

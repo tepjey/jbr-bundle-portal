@@ -10,8 +10,8 @@ import { WholesaleSection } from "@/components/WholesaleSection";
 import { PaymentMethods } from "@/components/PaymentMethods";
 import { Footer } from "@/components/Footer";
 
-const SITE_URL = "jbr-bundle-hub.vercel.app";
-const OG_IMAGE = "/favicon.png";
+const SITE_URL = "https://jbr-bundle-hub.vercel.app";
+const OG_IMAGE = SITE_URL + "/jbr-banner.png";
 const branchSchemas = [
   {
     name: "JBR Bundle Lotus's Seremban Jaya",
@@ -158,9 +158,9 @@ function HomePage() {
       <Hero />
       <Highlights />
       <BranchDirectory />
+      <StoreGallery />
       <OperatingHours />
       <SalesSections />
-      <StoreGallery />
       <WholesaleSection />
       <PaymentMethods />
       <Footer />

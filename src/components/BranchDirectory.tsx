@@ -19,7 +19,7 @@ import { Badge } from "@/components/ui/badge";
 import { BranchImage } from "@/components/BranchImage";
 
 const UNSPLASH = {
-  racks: "https://images.unsplash.com/photo-1616628180910-1f3e4c5b8d6e?q=80&w=800",
+  racks: "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?q=80&w=800",
   store: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?q=80&w=800",
   boutique: "https://images.unsplash.com/photo-1528698827591-e19ccd7bc23d?q=80&w=800",
   mall: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800",
@@ -140,18 +140,18 @@ const branches = [
 ];
 
 const branchMedia: Record<string, { src: string; fallback: string }> = {
-  "Lotus's Seremban Jaya": { src: "/public/branches/seremban.jpg", fallback: UNSPLASH.racks },
-  "Shah Alam": { src: "/public/branches/shah-alam.jpg", fallback: UNSPLASH.store },
-  "Bandar Sri Damansara": { src: "/public/branches/damansara.jpg", fallback: UNSPLASH.boutique },
-  "Bangi (EVO Mall)": { src: "/public/branches/bangi.jpg", fallback: UNSPLASH.mall },
-  "Subang USJ (Palazzo 19 Mall)": { src: "/public/branches/subang.jpg", fallback: UNSPLASH.hangers },
-  Klang: { src: "/public/branches/klang.jpg", fallback: UNSPLASH.racks },
-  Balakong: { src: "/public/branches/balakong.jpg", fallback: UNSPLASH.store },
-  "Hulu Langat": { src: "/public/branches/hulu-langat.jpg", fallback: UNSPLASH.hangers },
-  "Kanchong Darat (Banting)": { src: "/public/branches/kanchong-darat.jpg", fallback: UNSPLASH.boutique },
-  "Banting (Muara)": { src: "/public/branches/banting-muara.jpg", fallback: UNSPLASH.mall },
+  "Lotus's Seremban Jaya": { src: "public/branches/seremban.jpg", fallback: UNSPLASH.racks },
+  "Shah Alam": { src: "public/branches/shah-alam.jpg", fallback: UNSPLASH.store },
+  "Bandar Sri Damansara": { src: "public/branches/damansara.jpg", fallback: UNSPLASH.boutique },
+  "Bangi (EVO Mall)": { src: "public/branches/bangi.jpg", fallback: UNSPLASH.mall },
+  "Subang USJ (Palazzo 19 Mall)": { src: "public/branches/subang.jpg", fallback: UNSPLASH.hangers },
+  Klang: { src: "public/branches/klang.jpg", fallback: UNSPLASH.racks },
+  Balakong: { src: "public/branches/balakong.jpg", fallback: UNSPLASH.store },
+  "Hulu Langat": { src: "public/branches/hulu-langat.jpg", fallback: UNSPLASH.hangers },
+  "Kanchong Darat (Banting)": { src: "public/branches/kanchong-darat.jpg", fallback: UNSPLASH.boutique },
+  "Banting (Muara)": { src: "public/branches/banting-muara.jpg", fallback: UNSPLASH.mall },
   "Jenjarom (Headquarters & Warehouse)": {
-    src: "/public/branches/warehouse.jpg",
+    src: "public/branches/warehouse.jpg",
     fallback: UNSPLASH.warehouse,
   },
 };
@@ -270,7 +270,7 @@ export function BranchDirectory() {
                 </span>
               </div>
 
-              <div className="flex flex-1 flex-col p-5"></div>
+              <div className="flex flex-1 flex-col p-5">
               <div className="flex items-start justify-between gap-3">
                 <div className="flex items-start gap-3">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-sm bg-muted text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
@@ -363,7 +363,7 @@ export function BranchDirectory() {
                   </a>
                 </Button>
               </div>
-              
+
               <div className="pt-3">
                 <button
                   type="button"
@@ -402,6 +402,7 @@ export function BranchDirectory() {
                     )}
                   </div>
                 </div>
+              </div>
               </div>
             </article>
           ))}
