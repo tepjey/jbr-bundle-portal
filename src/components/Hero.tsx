@@ -11,8 +11,7 @@ export function Hero() {
       className="relative flex min-h-[calc(100vh-5rem)] items-center justify-center overflow-hidden border-b border-border"
     >
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
-        style={{ backgroundImage: `url(${bannerAsset.url})` }}
+        className="absolute inset-0 bg-[url('/jbr-banner.png')] bg-cover bg-center bg-no-repeat opacity-20"
         aria-hidden="true"
       />
       <div

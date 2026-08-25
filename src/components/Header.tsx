@@ -33,8 +33,8 @@ export function Header() {
           className="flex items-center gap-3 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
         >
           <img
-            src={logoAsset.url}
-            alt="JBR BUNDLE"
+            src="/jbr-logo.png"
+            alt="JBR Bundle Logo"
             className="h-14 w-auto rounded-sm"
             width={56}
             height={56}
