@@ -37,6 +37,7 @@ const regions = [
 const branches = [
   {
     name: "Lotus's Seremban Jaya",
+    image: "/branches/seremban.jpg",
     region: "Negeri Sembilan",
     hours: "10:00 AM - 10:00 PM (Buka Setiap Hari)",
     fridayNotice: "Kekal Beroperasi Seperti Biasa pada Hari Jumaat",
@@ -47,6 +48,7 @@ const branches = [
   },
   {
     name: "Shah Alam",
+    image: "/branches/shah-alam.jpg",
     region: "Selangor",
     hours: "10:00 AM - 12:00 AM (Tengah Malam)",
     address:
@@ -58,6 +60,7 @@ const branches = [
   },
   {
     name: "Bandar Sri Damansara",
+    image: "/branches/damansara.jpg",
     region: "Kuala Lumpur",
     hours: "10:00 AM - 12:00 AM (Tengah Malam)",
     phone: "014-3595676",
@@ -67,6 +70,7 @@ const branches = [
   },
   {
     name: "Bangi (EVO Mall)",
+    image: "/branches/bangi.jpg",
     region: "Selangor",
     hours: "10:00 AM - 10:00 PM",
     phone: "013-2605676",
@@ -76,6 +80,7 @@ const branches = [
   },
   {
     name: "Subang USJ (Palazzo 19 Mall)",
+    image: "/branches/subang.jpg",
     region: "Selangor",
     hours: "10:00 AM - 10:00 PM",
     phone: "014-3095676",
@@ -85,6 +90,7 @@ const branches = [
   },
   {
     name: "Klang",
+    image: "/branches/klang.jpg",
     region: "Selangor",
     hours: "10:00 AM - 12:00 AM",
     phone: "011-16755676",
@@ -94,6 +100,7 @@ const branches = [
   },
   {
     name: "Balakong",
+    image: "/branches/balakong.jpg",
     region: "Selangor",
     hours: "10:00 AM - 12:00 AM",
     phone: "014-3675676",
@@ -103,6 +110,7 @@ const branches = [
   },
   {
     name: "Hulu Langat",
+    image: "/branches/hulu-langat.jpg",
     region: "Selangor",
     hours: "10:00 AM - 12:00 AM",
     phone: "016-2485676",
@@ -112,6 +120,7 @@ const branches = [
   },
   {
     name: "Kanchong Darat (Banting)",
+    image: "/branches/kanchong-darat.jpg",
     region: "Selangor",
     hours: "10:00 AM - 12:00 AM",
     phone: "014-3015676",
@@ -121,6 +130,7 @@ const branches = [
   },
   {
     name: "Banting (Muara)",
+    image: "/branches/banting-muara.jpg",
     region: "Selangor",
     hours: "10:00 AM - 10:00 PM",
     phone: "014-3035676",
@@ -130,6 +140,7 @@ const branches = [
   },
   {
     name: "Jenjarom (Headquarters & Warehouse)",
+    image: "/branches/warehouse.jpg",
     region: "Selangor",
     hours: "8:30 AM - 5:30 PM (Tutup Hari Ahad, Rehat 1-2 PM)",
     phone: "03-31915676",
@@ -259,9 +270,9 @@ export function BranchDirectory() {
             >
               <div className="relative aspect-video overflow-hidden">
                 <BranchImage
-                  src={branchMedia[branch.name]?.src ?? "/branches/warehouse.jpg"}
+                  src={branch.image}
+                  alt={branch.name}
                   fallback={branchMedia[branch.name]?.fallback ?? UNSPLASH.warehouse}
-                  alt={`Suasana gudang JBR Bundle ${branch.name}`}
                   className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 />
                 <div className="pointer-events-none absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-card via-card/60 to-transparent" />
