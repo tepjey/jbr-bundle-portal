@@ -118,8 +118,8 @@ export function Header() {
                   onClick={() => setOpen(false)}
                 >
                   <img
-                    src={logoAsset.url}
-                    alt="JBR BUNDLE"
+                    src="/jbr-logo.png"
+                    alt="JBR Bundle Logo"
                     className="h-12 w-auto rounded-sm"
                     width={48}
                     height={48}
