@@ -37,8 +37,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
   const router = useRouter();
   useEffect(() => {
-    // Log the error to an error reporting service
-    // logErrorToService(error)
+
   }, [error]);
 
   return (
