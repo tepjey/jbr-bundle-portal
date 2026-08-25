@@ -9,10 +9,8 @@ import { WholesaleSection } from "@/components/WholesaleSection";
 import { PaymentMethods } from "@/components/PaymentMethods";
 import { Footer } from "@/components/Footer";
 
-const SITE_URL = "https://jbrbundle.app";
-const OG_IMAGE =
-  SITE_URL + "/__l5e/assets-v1/9997fcdd-2b17-4258-bf60-bd9cc4c3235c/jbr-banner.png";
-
+const SITE_URL = "jbr-bundle-hub.vercel.app";
+const OG_IMAGE = "/favicon.png";
 const branchSchemas = [
   {
     name: "JBR Bundle Lotus's Seremban Jaya",
