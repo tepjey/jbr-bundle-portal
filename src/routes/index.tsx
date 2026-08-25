@@ -3,6 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Hero } from "@/components/Hero";
 import { Highlights } from "@/components/Highlights";
 import { BranchDirectory } from "@/components/BranchDirectory";
+import { StoreGallery } from "@/components/StoreGallery";
 import { OperatingHours } from "@/components/OperatingHours";
 import { SalesSections } from "@/components/SalesSections";
 import { WholesaleSection } from "@/components/WholesaleSection";
@@ -159,6 +160,7 @@ function HomePage() {
       <BranchDirectory />
       <OperatingHours />
       <SalesSections />
+      <StoreGallery />
       <WholesaleSection />
       <PaymentMethods />
       <Footer />

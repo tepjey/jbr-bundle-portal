@@ -10,11 +10,22 @@ import {
   Phone,
   Search,
   Building,
+  ChevronDown,
 } from "lucide-react";
 
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { BranchImage } from "@/components/BranchImage";
+
+const UNSPLASH = {
+  racks: "https://images.unsplash.com/photo-1616628180910-1f3e4c5b8d6e?q=80&w=800",
+  store: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?q=80&w=800",
+  boutique: "https://images.unsplash.com/photo-1528698827591-e19ccd7bc23d?q=80&w=800",
+  mall: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800",
+  hangers: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?q=80&w=800",
+  warehouse: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800",
+};
 
 const regions = [
   { label: "Semua Cawangan", value: "all" },
@@ -128,6 +139,24 @@ const branches = [
   },
 ];
 
+const branchMedia: Record<string, { src: string; fallback: string }> = {
+  "Lotus's Seremban Jaya": { src: "/public/branches/seremban.jpg", fallback: UNSPLASH.racks },
+  "Shah Alam": { src: "/public/branches/shah-alam.jpg", fallback: UNSPLASH.store },
+  "Bandar Sri Damansara": { src: "/public/branches/damansara.jpg", fallback: UNSPLASH.boutique },
+  "Bangi (EVO Mall)": { src: "/public/branches/bangi.jpg", fallback: UNSPLASH.mall },
+  "Subang USJ (Palazzo 19 Mall)": { src: "/public/branches/subang.jpg", fallback: UNSPLASH.hangers },
+  Klang: { src: "/public/branches/klang.jpg", fallback: UNSPLASH.racks },
+  Balakong: { src: "/public/branches/balakong.jpg", fallback: UNSPLASH.store },
+  "Hulu Langat": { src: "/public/branches/hulu-langat.jpg", fallback: UNSPLASH.hangers },
+  "Kanchong Darat (Banting)": { src: "/public/branches/kanchong-darat.jpg", fallback: UNSPLASH.boutique },
+  "Banting (Muara)": { src: "/public/branches/banting-muara.jpg", fallback: UNSPLASH.mall },
+  "Jenjarom (Headquarters & Warehouse)": {
+    src: "/public/branches/warehouse.jpg",
+    fallback: UNSPLASH.warehouse,
+  },
+};
+
+
 function formatWhatsAppNumber(phone: string) {
   const digits = phone.replace(/\D/g, "");
   return digits.startsWith("0") ? `6${digits}` : digits;
@@ -136,6 +165,7 @@ function formatWhatsAppNumber(phone: string) {
 export function BranchDirectory() {
   const [query, setQuery] = useState("");
   const [region, setRegion] = useState("all");
+  const [openMap, setOpenMap] = useState<string | null>(null);
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -225,8 +255,22 @@ export function BranchDirectory() {
           {filtered.map((branch) => (
             <article
               key={branch.name}
-              className="group flex flex-col rounded-sm border border-border bg-card p-5 transition-all hover:border-primary/60 hover:shadow-sm"
+              className="group flex flex-col overflow-hidden rounded-sm border border-border bg-card transition-all hover:border-primary/60 hover:shadow-sm"
             >
+              <div className="relative aspect-video overflow-hidden">
+                <BranchImage
+                  src={branchMedia[branch.name]?.src ?? "/branches/warehouse.jpg"}
+                  fallback={branchMedia[branch.name]?.fallback ?? UNSPLASH.warehouse}
+                  alt={`Suasana gudang JBR Bundle ${branch.name}`}
+                  className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                />
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-card via-card/60 to-transparent" />
+                <span className="absolute bottom-3 left-3 rounded-sm bg-background/80 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-foreground backdrop-blur-sm">
+                  {branch.region}
+                </span>
+              </div>
+
+              <div className="flex flex-1 flex-col p-5"></div>
               <div className="flex items-start justify-between gap-3">
                 <div className="flex items-start gap-3">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-sm bg-muted text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
@@ -318,6 +362,46 @@ export function BranchDirectory() {
                     WhatsApp
                   </a>
                 </Button>
+              </div>
+              
+              <div className="pt-3">
+                <button
+                  type="button"
+                  onClick={() =>
+                    setOpenMap((prev) => (prev === branch.name ? null : branch.name))
+                  }
+                  aria-expanded={openMap === branch.name}
+                  className="flex w-full items-center justify-between rounded-sm border border-border px-3 py-2 text-xs font-semibold uppercase tracking-wide text-foreground transition-colors hover:bg-muted"
+                >
+                  <span className="flex items-center gap-1.5">
+                    <MapIcon className="h-3.5 w-3.5 text-primary" />
+                    Lihat Peta Interaktif
+                  </span>
+                  <ChevronDown
+                    className={`h-4 w-4 text-primary transition-transform duration-300 ${
+                      openMap === branch.name ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+                <div
+                  className={`grid transition-all duration-500 ease-out ${
+                    openMap === branch.name
+                      ? "grid-rows-[1fr] opacity-100"
+                      : "grid-rows-[0fr] opacity-0"
+                  }`}
+                >
+                  <div className="overflow-hidden">
+                    {openMap === branch.name && (
+                      <iframe
+                        title={`Peta ${branch.name}`}
+                        src={`https://maps.google.com/maps?q=${encodeURIComponent(branch.mapsQuery)}&z=15&output=embed`}
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                        className="mt-3 h-52 w-full rounded-sm border border-border"
+                      />
+                    )}
+                  </div>
+                </div>
               </div>
             </article>
           ))}
