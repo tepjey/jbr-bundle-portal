@@ -129,16 +129,6 @@ const branches = [
     mapsQuery: "JBR Bundle Kanchong Darat",
   },
   {
-    name: "Banting (Muara)",
-    image: "/branches/banting-muara.jpg",
-    region: "Selangor",
-    hours: "10:00 AM - 10:00 PM",
-    phone: "014-3035676",
-    specialty: "Pakaian, Beg & Kasut",
-    wazeQuery: "JBR Bundle Banting Muara",
-    mapsQuery: "JBR Bundle Banting Muara",
-  },
-  {
     name: "Jenjarom (Headquarters & Warehouse)",
     image: "/branches/warehouse.jpg",
     region: "Selangor",
@@ -160,7 +150,6 @@ const branchMedia: Record<string, { src: string; fallback: string }> = {
   Balakong: { src: "public/branches/balakong.jpg", fallback: UNSPLASH.store },
   "Hulu Langat": { src: "public/branches/hulu-langat.jpg", fallback: UNSPLASH.hangers },
   "Kanchong Darat (Banting)": { src: "public/branches/kanchong-darat.jpg", fallback: UNSPLASH.boutique },
-  "Banting (Muara)": { src: "public/branches/banting-muara.jpg", fallback: UNSPLASH.mall },
   "Jenjarom (Headquarters & Warehouse)": {
     src: "public/branches/warehouse.jpg",
     fallback: UNSPLASH.warehouse,

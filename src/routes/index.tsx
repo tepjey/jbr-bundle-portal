@@ -77,13 +77,6 @@ const branchSchemas = [
     hours: "Mo-Su 10:00-24:00",
   },
   {
-    name: "JBR Bundle Banting (Muara)",
-    region: "Banting",
-    state: "Selangor",
-    telephone: "+601430 35676",
-    hours: "Mo-Su 10:00-22:00",
-  },
-  {
     name: "JBR Bundle Jenjarom (Headquarters & Warehouse)",
     region: "Jenjarom",
     state: "Selangor",
