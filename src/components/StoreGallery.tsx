@@ -6,42 +6,42 @@ const categories = [
     desc: "Jersi retro, trackt op & jaket sukan klasik.",
     src: "/gallery/sportswear.jpg",
     fallback:
-      "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?q=80&w=800",
+      "https://placehold.co/800x600.png",
   },
   {
     title: "Denim & Streetwear Racks",
     desc: "Rak denim Jepun, flannel & streetwear pilihan.",
     src: "/gallery/denim.jpg",
     fallback:
-      "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800",
+      "https://placehold.co/800x600.png",
   },
   {
     title: "Kasut & Sneakers Corner",
     desc: "Sneakers berjenama, boot kerja & kasut kulit.",
     src: "/gallery/sneakers.jpg",
     fallback:
-      "https://images.unsplash.com/photo-1528698827591-e19ccd7bc23d?q=80&w=800",
+      "https://placehold.co/800x600.png",
   },
   {
     title: "Toys & Collectibles Vault",
     desc: "Mainan kanak-kanak, figurine & barang koleksi.",
     src: "/gallery/toys.jpg",
     fallback:
-      "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?q=80&w=800",
+      "https://placehold.co/800x600.png",
   },
   {
     title: "Bric-a-Brac & Barangan Rumah",
     desc: "Pinggan mangkuk, hiasan rumah & perabot terpakai.",
     src: "/gallery/bric-a-brac.jpg",
     fallback:
-      "https://images.unsplash.com/photo-1472851294608-062f824d29cc?q=80&w=800",
+      "https://placehold.co/800x600.png",
   },
   {
     title: "Gudang Borong Guni Jenjarom HQ",
     desc: "Stok bale & tokol untuk peniaga borong.",
     src: "/gallery/warehouse.jpg",
     fallback:
-      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800",
+      "https://placehold.co/800x600.png",
   },
 ];
 
